@@ -2,3 +2,13 @@
   margin: 0 auto;
   padding: 2rem;
 }
+
+.footer{
+  background-color: #361236;
+  display: flex;
+  color: #E5BD41;
+}
+
+.footer img{
+  width: 100px;
+}
