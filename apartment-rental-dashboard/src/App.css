@@ -25,3 +25,15 @@
 
 }
 
+.footer{
+  background-color: #361236;
+  color: #E5BD41;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer img{
+  width: 50px;
+  margin-right: 10px;
+}

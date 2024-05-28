@@ -1,5 +1,6 @@
 import './App.css'
 import Navbar from './components/Navbar'
+import Footer from './components/Footer'
 
 function App() {
 
@@ -7,6 +8,7 @@ function App() {
     <>
     <Navbar/>
     <h1>Dias&Lopes Apartment Rentals</h1>
+    <Footer />
     </>
   )
 }
