@@ -7,6 +7,7 @@
 #root {
   margin: 0 auto;
   font-family: "BC", Arial, Helvetica, sans-serif;
+  height: 100vh;
 }
 
 .navbar{
@@ -17,6 +18,7 @@
   justify-content: space-between;
   width: 98vw;
   padding:0 1vw;
+  height:7vh;
   
 }
 
@@ -25,12 +27,31 @@
 
 }
 
+.landing-page{
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 87vh;
+}
+
+.content{
+  width: 85vh;
+}
+
+.sidebar{
+  display: flex;
+  flex-direction: column;
+  width: 15vw;
+  background-color: #E5BD41;
+}
+
 .footer{
   background-color: #361236;
   color: #E5BD41;
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 6vh;
 }
 
 .footer img{
