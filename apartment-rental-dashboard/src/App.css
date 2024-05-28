@@ -1,4 +1,27 @@
+@font-face {
+  font-family: 'BC';
+  src: url("./assets/iridescent-bc.woff") format('woff');
+}
+
+
 #root {
   margin: 0 auto;
-  padding: 2rem;
+  font-family: "BC", Arial, Helvetica, sans-serif;
 }
+
+.navbar{
+  color:#E5BD41;
+  background-color: #361236;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 98vw;
+  padding:0 1vw;
+  
+}
+
+.navbar h2{
+  font-weight: lighter;
+
+}
+
