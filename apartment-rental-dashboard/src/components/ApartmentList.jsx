@@ -4,12 +4,10 @@ import { useState } from "react"
 
 
 const ApartmentList = () => {
-    const [rentals, setRentals] = useState(rentalsData)
-    const allRentals = rentals["results"]
-    console.log("this is", allRentals)
+    const [rentals, setRentals] = useState(rentalsData.results)
     
     function handleDeleteUnit(unitId) { 
-        const filteredRentals = allRentals.filter((rental) => {
+        const filteredRentals = rentals.filter((rental) => {
           if(rental.id !== unitId){
             return true
           } 
@@ -18,7 +16,7 @@ const ApartmentList = () => {
       }
   return (
     <div>
-        {allRentals.map((unit)=>(
+        {rentals.map((unit)=>(
             <ApartmentCard key={unit.id} rental={unit} onDelete={handleDeleteUnit}/>
         ))}
 

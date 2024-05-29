@@ -11,7 +11,6 @@ function App() {
     <Navbar/>
     <div className="landing-page">
       <Sidebar/>
-      <div className="content">List of apartments to rent</div>
       <ApartmentList/>
     </div>
     <Footer />
