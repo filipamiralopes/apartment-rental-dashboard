@@ -2,15 +2,17 @@ import './App.css'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Sidebar from './components/Sidebar'
+import ApartmentList from './components/ApartmentList'
 
 function App() {
 
   return (
     <>
     <Navbar/>
-    <div class="landing-page">
+    <div className="landing-page">
       <Sidebar/>
-      <div class="content">List of apartments to rent</div>
+      <div className="content">List of apartments to rent</div>
+      <ApartmentList/>
     </div>
     <Footer />
     </>

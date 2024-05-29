@@ -58,3 +58,23 @@
   width: 50px;
   margin-right: 10px;
 }
+
+.rental-unit{
+  border: 2px solid black;
+  margin:10px;
+  font-size: 0.8em;
+  display: flex;
+}
+
+.unit-description p{
+  font-family: 'Courier New', Courier, monospace;
+}
+
+
+.labels{
+  display: flex;
+}
+.green-label{
+  background-color: #361236;
+  color: white;
+}
