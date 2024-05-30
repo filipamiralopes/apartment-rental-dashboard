@@ -11,6 +11,15 @@ import rentalsData from "./assets/rentals.json"
 function App() {
   const [rentals, setRentals] = useState(rentalsData.results)
 
+  function handleDeleteUnit(unitId) { 
+    const filteredRentals = rentals.filter((rental) => {
+      if(rental.id !== unitId){
+        return true
+      } 
+    })
+    setRentals(filteredRentals)
+  }
+
   return (
     <>
       <Navbar />
@@ -18,8 +27,8 @@ function App() {
         <Sidebar />
         {/* Routers */}
         <Routes>
-          <Route path="/" element={<ApartmentList rentals={rentals}/>} />
-          <Route path="/rentals" element={<ApartmentList rentals={rentals}/>} />
+          <Route path="/" element={<ApartmentList rentals={rentals} handleDeleteUnit={handleDeleteUnit}/>} />
+          <Route path="/rentals" element={<ApartmentList rentals={rentals} handleDeleteUnit={handleDeleteUnit}/>} />
           <Route path="/rentals/:rentalId" element={<RentalDetail rentals={rentals} />} />
         </Routes>
       </div>
