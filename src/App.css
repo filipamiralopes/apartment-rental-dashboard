@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
 @font-face {
   font-family: 'BC';
   src: url("./assets/iridescent-bc.woff") format('woff');
@@ -190,4 +192,30 @@
 
 a {
   text-decoration: none;
+}
+
+/* Rental detail */
+
+.rental-detail{
+  display: flex;
+  flex-direction: column;
+  margin: 0 10px;
+  padding: 10px;
+  width: 100vw;
+  height: 100%;
+}
+
+#rental-detail-image{
+  text-align: center;
+  margin-top: 10px;
+}
+
+.rental-detail img {
+  width: 500px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.rental-detail p{
+  font-family: 'Inter', sans-serif;
 }
