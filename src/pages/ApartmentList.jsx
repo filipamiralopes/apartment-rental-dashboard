@@ -1,5 +1,5 @@
 import rentalsData from "../assets/rentals.json"
-import ApartmentCard from './ApartmentCard'
+import ApartmentCard from '../components/ApartmentCard'
 import { useState } from "react"
 
 
