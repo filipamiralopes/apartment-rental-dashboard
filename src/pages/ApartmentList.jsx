@@ -1,10 +1,8 @@
-import rentalsData from "../assets/rentals.json"
 import ApartmentCard from '../components/ApartmentCard'
-import { useState } from "react"
 
+const ApartmentList = (props) => {
 
-const ApartmentList = () => {
-    const [rentals, setRentals] = useState(rentalsData.results)
+  const {rentals} = props
     
     function handleDeleteUnit(unitId) { 
         const filteredRentals = rentals.filter((rental) => {
