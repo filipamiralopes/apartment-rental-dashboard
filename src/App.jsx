@@ -11,6 +11,7 @@ function App() {
     <Navbar/>
     <div className="landing-page">
       <Sidebar/>
+      {/* Routers */}
       <ApartmentList/>
     </div>
     <Footer />
