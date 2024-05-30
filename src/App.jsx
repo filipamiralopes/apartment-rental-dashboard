@@ -28,7 +28,6 @@ function App() {
         {/* Routers */}
         <Routes>
           <Route path="/" element={<ApartmentList rentals={rentals} handleDeleteUnit={handleDeleteUnit}/>} />
-          <Route path="/rentals" element={<ApartmentList rentals={rentals} handleDeleteUnit={handleDeleteUnit}/>} />
           <Route path="/rentals/:rentalId" element={<RentalDetail rentals={rentals} />} />
         </Routes>
       </div>
