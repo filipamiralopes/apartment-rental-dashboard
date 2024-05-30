@@ -23,7 +23,7 @@ const AboutPage = () => {
                    
       <h2>Links</h2>
       <a href="https://github.com/filipamiralopes">Filipa's GitHub</a><br/>
-      <a href="">Filipa's LinkedIn</a><br/>
+      <a href="https://www.linkedin.com/in/filipamiralopes/">Filipa's LinkedIn</a><br/>
       <a href="https://github.com/Dani-A-Dias">Daniela's GitHub</a><br/>
       <a href="">Daniela's LinkedIn</a><br/>
       
