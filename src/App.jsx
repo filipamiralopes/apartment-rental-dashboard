@@ -1,22 +1,24 @@
-import './App.css'
-import Navbar from './components/Navbar'
-import Footer from './components/Footer'
-import Sidebar from './components/Sidebar'
-import ApartmentList from './components/ApartmentList'
+import "./App.css";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Sidebar from "./components/Sidebar";
+import ApartmentList from "./components/ApartmentList";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
-
   return (
     <>
-    <Navbar/>
-    <div className="landing-page">
-      <Sidebar/>
-      {/* Routers */}
-      <ApartmentList/>
-    </div>
-    <Footer />
+      <Navbar />
+      <div className="landing-page">
+        <Sidebar />
+        {/* Routers */}
+        <Routes>
+          <Route path="/" element={<ApartmentList />} />
+        </Routes>
+      </div>
+      <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
