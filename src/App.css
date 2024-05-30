@@ -187,3 +187,7 @@
 .delete-btn:hover {
   background-color: #d4a01f;
 }
+
+a {
+  text-decoration: none;
+}
