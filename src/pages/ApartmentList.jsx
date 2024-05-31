@@ -1,18 +1,23 @@
-import ApartmentCard from '../components/ApartmentCard'
+import { Link } from "react-router-dom";
+import ApartmentCard from "../components/ApartmentCard";
 
 const ApartmentList = (props) => {
-
-  const {rentals} = props
+  const { rentals } = props;
 
   return (
     <div className="apartment-list">
-      <button id="add-property-btn">Add Property</button>
-        {rentals.map((unit)=>(
-            <ApartmentCard key={unit.id} rental={unit} onDelete={props.handleDeleteUnit}/>
-        ))}
+      <Link to="/add-rental">
+        <button id="add-property-btn">Add Property</button>
+      </Link>
+      {rentals.map((unit) => (
+        <ApartmentCard
+          key={unit.id}
+          rental={unit}
+          onDelete={props.handleDeleteUnit}
+        />
+      ))}
+    </div>
+  );
+};
 
-    </div> 
-  )
-}
-
-export default ApartmentList
+export default ApartmentList;
