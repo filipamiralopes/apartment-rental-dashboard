@@ -9,7 +9,7 @@ const NotFound = () => {
 
       <img src={notFound} alt="page not found" className='robot-not-found'/>
 
-      <button>Return Home</button>
+      <button >Return Home</button>
 
       </div>
   )

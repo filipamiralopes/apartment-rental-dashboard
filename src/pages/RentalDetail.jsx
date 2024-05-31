@@ -20,7 +20,7 @@ const RentalDetail = (props) => {
       <h3>{filteredRentals.price},00€/por noche | Score: {filteredRentals.review_scores_rating}%</h3>
       <p>{filteredRentals.host_name} | hoste since {filteredRentals.host_since} | Typically responds {filteredRentals.host_response_time}</p>
       <p><b>Comentario del anunciante</b></p>
-      <p>{filteredRentals.space}</p>
+      <p>{filteredRentals.description}</p>
     </div>
   );
 };

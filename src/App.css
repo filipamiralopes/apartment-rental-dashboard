@@ -44,6 +44,13 @@
   background-color: #E5BD41;
 }
 
+.sidebar a{
+  margin: 20px 0 0 20px;
+}
+.sidebar a:hover{
+  text-decoration: underline;
+}
+
 .footer {
   background-color: #361236;
   color: #E5BD41;
@@ -258,4 +265,30 @@ a {
   justify-content: space-around;
   margin: 2%;
 
+}
+
+/* .apartment-list{
+  display: flex;
+  flex-direction: column;
+} */
+
+#add-property-btn{
+  color: #E5BD41;
+  background-color: #361236;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  font-size: 2em;
+  cursor: pointer;
+  font-family: "BC", Arial, Helvetica, sans-serif;
+  bottom: 10px;
+  right: 10px;
+  text-align: center;
+  width: 40%;
+  margin: 30px 20px 20px 300px;
+}
+
+#add-property-btn:hover{
+  background-color: #E5BD41;
+  color: #361236;
 }

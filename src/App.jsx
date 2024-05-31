@@ -9,6 +9,7 @@ import { useState } from "react";
 import rentalsData from "./assets/rentals.json";
 import NotFound from "./pages/NotFound";
 import AboutPage from "./pages/AboutPage";
+import AddRental from "./pages/AddRental"
 
 function App() {
   const [rentals, setRentals] = useState(rentalsData.results);
@@ -42,6 +43,7 @@ function App() {
             path="/rentals/:rentalId"
             element={<RentalDetail rentals={rentals} />}
           />
+          <Route path="/add-rental" element={<AddRental rentals={rentals} setRentals={setRentals}/>} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
