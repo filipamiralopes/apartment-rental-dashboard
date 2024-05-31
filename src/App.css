@@ -219,3 +219,43 @@ a {
 .rental-detail p{
   font-family: 'Inter', sans-serif;
 }
+
+.page-not-found{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.page-not-found img{
+  margin: 0;
+  padding: 0;
+}
+
+.page-not-found button{
+  background-color: #E5BD41;
+  color: #361236;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  font-size: 2em;
+  cursor: pointer;
+  font-family: "BC", Arial, Helvetica, sans-serif;
+  bottom: 10px;
+  right: 10px;
+  text-align: center;
+}
+
+.about-project{
+  padding: 5%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.team-members{
+  display: flex;
+  justify-content: space-around;
+  margin: 2%;
+
+}

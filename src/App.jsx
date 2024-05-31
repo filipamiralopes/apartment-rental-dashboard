@@ -5,19 +5,21 @@ import Sidebar from "./components/Sidebar";
 import ApartmentList from "./pages/ApartmentList";
 import { Routes, Route } from "react-router-dom";
 import RentalDetail from "./pages/RentalDetail";
-import { useState } from "react"
-import rentalsData from "./assets/rentals.json"
+import { useState } from "react";
+import rentalsData from "./assets/rentals.json";
+import NotFound from "./pages/NotFound";
+import AboutPage from "./pages/AboutPage";
 
 function App() {
-  const [rentals, setRentals] = useState(rentalsData.results)
+  const [rentals, setRentals] = useState(rentalsData.results);
 
-  function handleDeleteUnit(unitId) { 
+  function handleDeleteUnit(unitId) {
     const filteredRentals = rentals.filter((rental) => {
-      if(rental.id !== unitId){
-        return true
-      } 
-    })
-    setRentals(filteredRentals)
+      if (rental.id !== unitId) {
+        return true;
+      }
+    });
+    setRentals(filteredRentals);
   }
 
   return (
@@ -27,8 +29,21 @@ function App() {
         <Sidebar />
         {/* Routers */}
         <Routes>
-          <Route path="/" element={<ApartmentList rentals={rentals} handleDeleteUnit={handleDeleteUnit}/>} />
-          <Route path="/rentals/:rentalId" element={<RentalDetail rentals={rentals} />} />
+          <Route
+            path="/"
+            element={
+              <ApartmentList
+                rentals={rentals}
+                handleDeleteUnit={handleDeleteUnit}
+              />
+            }
+          />
+          <Route
+            path="/rentals/:rentalId"
+            element={<RentalDetail rentals={rentals} />}
+          />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
       <Footer />
