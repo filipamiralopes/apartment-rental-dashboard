@@ -262,7 +262,7 @@ a {
 .page-not-found button:hover{
   background-color: #d4a01f;
 }
-
+/* About Page */
 .about-project{
   padding: 5%;
   width: 100%;
@@ -271,11 +271,28 @@ a {
   align-items: center;
 }
 
-.team-members{
+.team-members{  
   display: flex;
   justify-content: space-around;
-  margin: 2%;
+  margin: 0 10px 0;
+  text-align: center;
 
+}
+
+.team-members img{
+  width: 200px;
+  border: 1px solid #361236;
+}
+
+.member{
+  margin: 40px;
+  width: 400px;
+  
+  
+}
+
+.about-project p{
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 /* .apartment-list{
