@@ -389,3 +389,8 @@ a {
 .form-container textarea:focus {
   border-color: #E5BD41; 
 }
+
+.favs-container{
+  display: flex;
+  flex-direction: column;
+}

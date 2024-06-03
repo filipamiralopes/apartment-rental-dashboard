@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import ApartmentCard from "../components/ApartmentCard";
 
-const ApartmentList = ({rentals, handleDeleteUnit, handleAddToFavourites}) => {
+const ApartmentList = ({rentals, handleDeleteUnit, handleAddToFavourites, favRentals}) => {
 
   return (
     <div className="apartment-list">
@@ -14,6 +14,7 @@ const ApartmentList = ({rentals, handleDeleteUnit, handleAddToFavourites}) => {
           rental={unit}
           onDelete={handleDeleteUnit}
           handleAddToFavourites={handleAddToFavourites}
+          favRentals={favRentals}
         />
       ))}
     </div>

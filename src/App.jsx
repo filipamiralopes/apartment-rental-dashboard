@@ -42,6 +42,7 @@ function App() {
                 rentals={rentals}
                 handleDeleteUnit={handleDeleteUnit}
                 handleAddToFavourites={handleAddToFavourites}
+                favRentals={favRentals}
               />
             }
           />
@@ -57,8 +58,9 @@ function App() {
             path="/favourites"
             element={
               <Favourites
-                rentals={rentals} //?
                 favRentals={favRentals}
+                handleDeleteUnit={handleDeleteUnit}
+                handleAddToFavourites={handleAddToFavourites}
               />
             }
           />
