@@ -9,10 +9,12 @@ import { useState } from "react";
 import rentalsData from "./assets/rentals.json";
 import NotFound from "./pages/NotFound";
 import AboutPage from "./pages/AboutPage";
-import AddRental from "./pages/AddRental"
+import AddRental from "./pages/AddRental";
+import Favourites from "./pages/Favourites";
 
 function App() {
   const [rentals, setRentals] = useState(rentalsData.results);
+  const [favRentals, setFavRentals] = useState([]);
 
   function handleDeleteUnit(unitId) {
     const filteredRentals = rentals.filter((rental) => {
@@ -21,6 +23,9 @@ function App() {
       }
     });
     setRentals(filteredRentals);
+  }
+  function handleAddToFavourites(unit) {
+    setFavRentals([...favRentals, unit]);
   }
 
   return (
@@ -36,6 +41,7 @@ function App() {
               <ApartmentList
                 rentals={rentals}
                 handleDeleteUnit={handleDeleteUnit}
+                handleAddToFavourites={handleAddToFavourites}
               />
             }
           />
@@ -43,7 +49,19 @@ function App() {
             path="/rentals/:rentalId"
             element={<RentalDetail rentals={rentals} />}
           />
-          <Route path="/add-rental" element={<AddRental rentals={rentals} setRentals={setRentals}/>} />
+          <Route
+            path="/add-rental"
+            element={<AddRental rentals={rentals} setRentals={setRentals} />}
+          />
+          <Route
+            path="/favourites"
+            element={
+              <Favourites
+                rentals={rentals} //?
+                favRentals={favRentals}
+              />
+            }
+          />
           <Route path="/about" element={<AboutPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

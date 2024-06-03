@@ -7,7 +7,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
-const ApartmentCard = ({ rental, onDelete }) => {
+const ApartmentCard = ({ rental, onDelete, handleAddToFavourites }) => {
   return (
     <div className="rental-unit">
       <div className="img-box-rental">
@@ -15,10 +15,17 @@ const ApartmentCard = ({ rental, onDelete }) => {
           <img src={rental.picture_url.url} alt={`Photo of ${rental.name}`} />
         </Link>
       </div>
+      <button
+        onClick={() => {
+          handleAddToFavourites(rental);
+        }}
+      >
+        Add to favourites
+      </button>
       <div className="unit-description">
         <div className="title">
-        <Link to={`/rentals/${rental.id}`}>
-          <h3>{rental.name}</h3>
+          <Link to={`/rentals/${rental.id}`}>
+            <h3>{rental.name}</h3>
           </Link>
           <h2 className="rating">
             <FontAwesomeIcon icon={faStar} /> {rental.review_scores_rating}/100
