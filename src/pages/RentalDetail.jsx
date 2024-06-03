@@ -1,5 +1,6 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import placeImage from '../assets/placeholder-photo.jpg';
 
 const RentalDetail = (props) => {
   const { rentals } = props;
@@ -13,7 +14,7 @@ const RentalDetail = (props) => {
   return (
     <div className="rental-detail">
       <div id="rental-detail-image">
-        <img src={filteredRentals.picture_url.url} />
+      <img src={filteredRentals.picture_url?.url || placeImage} alt={filteredRentals.name} />
       </div>
       <h2>{filteredRentals.name}</h2>
       <h4>{filteredRentals.neighbourhood}, {filteredRentals.city}</h4>
@@ -21,6 +22,10 @@ const RentalDetail = (props) => {
       <p>{filteredRentals.host_name} | hoste since {filteredRentals.host_since} | Typically responds {filteredRentals.host_response_time}</p>
       <p><b>Comentario del anunciante</b></p>
       <p>{filteredRentals.description}</p>
+      <br/>
+      <Link to={`/edit-rental/${filteredRentals.id}`}>
+  <button>Edit Unit</button>
+</Link>
     </div>
   );
 };

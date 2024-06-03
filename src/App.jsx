@@ -10,6 +10,7 @@ import rentalsData from "./assets/rentals.json";
 import NotFound from "./pages/NotFound";
 import AboutPage from "./pages/AboutPage";
 import AddRental from "./pages/AddRental"
+import EditRental from "./pages/EditRental";
 
 function App() {
   const [rentals, setRentals] = useState(rentalsData.results);
@@ -43,6 +44,7 @@ function App() {
             path="/rentals/:rentalId"
             element={<RentalDetail rentals={rentals} />}
           />
+          <Route path="/edit-rental/:rentalId" element={<EditRental rentals={rentals} setRentals={setRentals}/>}/>
           <Route path="/add-rental" element={<AddRental rentals={rentals} setRentals={setRentals}/>} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="*" element={<NotFound />} />

@@ -1,44 +1,42 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import placeImage from '../assets/placeholder-photo.jpg';
 
-const AddRental = ({ rentals, setRentals }) => {
-	const [country, setCountry] = useState('');
-	const [city, setCity] = useState('');
-	const [image, setImage] = useState('');
-	const [neighbourhood, setNeighbourhood] = useState('');
-	const [name, setName] = useState('');
-	const [description, setDescription] = useState('');
-	const [house_rules, setHouseRules] = useState('');
-	const [host_name, setHostName] = useState('');
-	const [host_since, setHostSince] = useState('');
-	const [host_response_time, setHostResponseTime] = useState('');
-	const [property_type, setProperty_type] = useState('Apartment');
-	const [roomType, setRoomType] = useState('Other');
-	const [accommodates, setAccommodates] = useState(0);
-	const [bedrooms, setBedrooms] = useState(0);
-	const [bathrooms, setBathrooms] = useState(0);
-	const [price, setPrice] = useState(0);
-	const [cleaning_fee, setCleanFee] = useState(0);
-	const [cancelRental, setCancelRental] = useState('Flexible');
-	const [review_scores_rating, setReview_scores_rating] = useState(0)
+const EditRental = ({ rentals, setRentals }) => {
+	const { rentalId } = useParams();
+	const foundUnit = rentals.find((unit) => unit.id === rentalId);
+
+	const [country, setCountry] = useState(foundUnit.country);
+	const [city, setCity] = useState(foundUnit.city);
+	const [image, setImage] = useState(foundUnit.picture_url.url || '');
+	const [neighbourhood, setNeighbourhood] = useState(foundUnit.neighbourhood);
+	const [name, setName] = useState(foundUnit.name);
+	const [description, setDescription] = useState(foundUnit.description);
+	const [house_rules, setHouseRules] = useState(foundUnit.house_rules);
+	const [host_name, setHostName] = useState(foundUnit.host_name);
+	const [host_since, setHostSince] = useState(foundUnit.host_since);
+	const [host_response_time, setHostResponseTime] = useState(
+		foundUnit.host_response_time
+	);
+	const [property_type, setProperty_type] = useState(foundUnit.property_type);
+	const [roomType, setRoomType] = useState(foundUnit.roomType);
+	const [accommodates, setAccommodates] = useState(foundUnit.accommodates);
+	const [bedrooms, setBedrooms] = useState(foundUnit.bedrooms);
+	const [bathrooms, setBathrooms] = useState(foundUnit.bathrooms);
+	const [price, setPrice] = useState(foundUnit.price);
+	const [cleanFee, setCleanFee] = useState(foundUnit.cleaning_fee);
+	const [cancelRental, setCancelRental] = useState(foundUnit.cancelRental);
+	const [review_scores_rating, setReview_scores_rating] = useState(foundUnit.review_scores_rating)
 	const nav = useNavigate();
 
-	function handleAddRental(event) {
+	function handleEditRental(event) {
 		event.preventDefault();
 
-		//to check last id and add 1 to it, then turn it back to striiing
-		const lastId = rentals.reduce((maxId, rental) => {
-			const currId = parseInt(rental.id);
-			return currId > maxId ? currId : maxId;
-		}, 0);
-		const newId = (lastId + 1).toString();
-
-		const newUnit = {
-			id: newId,
+		const updatedUnit = {
+			...foundUnit,
 			country,
 			city,
-			picture_url: { url: image },
+			picture_url: { ...foundUnit.picture_url, url: image },
 			neighbourhood,
 			name,
 			description,
@@ -46,27 +44,34 @@ const AddRental = ({ rentals, setRentals }) => {
 			host_name,
 			host_since,
 			host_response_time,
-			property_type,
-			roomType,
+			property_type: property_type,
+			room_type: roomType,
 			accommodates,
 			bedrooms,
 			bathrooms,
 			price,
-			cleaning_fee,
-			cancelRental,
+			cleaning_fee: cleanFee,
+			cancellation_policy: cancelRental,
 			review_scores_rating,
-		};
+		  };
+		const updatedListOfRentals = rentals.map((rental) => {
+			if (rental.id == rentalId) {
+				return updatedUnit;
+			} else {
+				return rental;
+			}
+		});
 
-		setRentals([newUnit, ...rentals]);
-		nav('/');
+		setRentals(updatedListOfRentals);
+		nav(`/rentals/${rentalId}`);
 	}
 
 	return (
 		<div className="add-rental-page">
-			<h1>Create a new rental</h1>
+			<h1>Edit rental</h1>
 			<div className="form-container">
 				<form
-					onSubmit={handleAddRental}
+					onSubmit={handleEditRental}
 					className="form-left"
 				>
 					<label>
@@ -203,9 +208,9 @@ const AddRental = ({ rentals, setRentals }) => {
 					</label>
 					<br />
 					<label>
-						Accomodates:<span> </span>
+						accommodates:<span> </span>
 						<input
-							name="accomodates"
+							name="accommodates"
 							type="number"
 							value={accommodates}
 							min={0}
@@ -251,7 +256,7 @@ const AddRental = ({ rentals, setRentals }) => {
 						<input
 							name="cleaning-fee"
 							type="number"
-							value={cleaning_fee}
+							value={cleanFee}
 							min={0}
 							onChange={(event) => setCleanFee(event.target.value)}
 						/>
@@ -288,9 +293,10 @@ const AddRental = ({ rentals, setRentals }) => {
 				<div className="form-right">
 					<h2>Preview</h2>
 					<img
+						className="image-preview"
 						src={image || placeImage}
 						alt="Preview"
-						className="image-preview"
+						
 					/>
 				</div>
 			</div>
@@ -298,4 +304,4 @@ const AddRental = ({ rentals, setRentals }) => {
 	);
 };
 
-export default AddRental;
+export default EditRental;
