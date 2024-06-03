@@ -7,7 +7,7 @@ const ApartmentList = (props) => {
   return (
     <div className="apartment-list">
       <Link to="/add-rental">
-        <button id="add-property-btn">Add Property</button>
+        <button id="add-property-btn">Add Rental</button>
       </Link>
       {rentals.map((unit) => (
         <ApartmentCard
@@ -21,3 +21,4 @@ const ApartmentList = (props) => {
 };
 
 export default ApartmentList;
+//

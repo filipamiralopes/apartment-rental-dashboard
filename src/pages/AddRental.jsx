@@ -55,7 +55,7 @@ const AddRental = ({ rentals, setRentals }) => {
 			cancelRental,
 		};
 
-		setRentals([...rentals, newUnit]);
+		setRentals([newUnit, ...rentals]);
 		nav('/');
 	}
 
