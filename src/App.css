@@ -394,3 +394,24 @@ a {
   display: flex;
   flex-direction: column;
 }
+
+.edit-btn{
+  color: #E5BD41;
+  background-color: #361236;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  font-size: 2em;
+  cursor: pointer;
+  font-family: "BC", Arial, Helvetica, sans-serif;
+  bottom: 10px;
+  right: 10px;
+  text-align: center;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.edit-btn:hover{
+  background-color: #d4a01f;
+  color: #361236;
+}

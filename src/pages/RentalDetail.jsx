@@ -24,7 +24,7 @@ const RentalDetail = (props) => {
       <p>{filteredRentals.description}</p>
       <br/>
       <Link to={`/edit-rental/${filteredRentals.id}`}>
-  <button>Edit Unit</button>
+  <button className="edit-btn">Edit Unit</button>
 </Link>
     </div>
   );
