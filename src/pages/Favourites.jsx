@@ -8,7 +8,7 @@ const Favourites = ({
   handleAddToFavourites,
 }) => {
   return (
-    <div className="favs-container">
+    <div className="favourites-project">
       <h2>Favourites:</h2>
       {favRentals.map((unit) => {
         return (

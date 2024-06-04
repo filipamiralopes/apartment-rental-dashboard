@@ -390,9 +390,10 @@ a {
   border-color: #E5BD41; 
 }
 
-.favs-container{
+.favourites-page{
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .edit-btn{
@@ -442,4 +443,9 @@ a {
 .btn-like img {
   width: 18px;
   height: 18px;
+}
+
+.favourites-project{
+  padding: 5%;
+  height: 70vh;
 }
