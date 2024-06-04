@@ -11,9 +11,11 @@ import NotFound from "./pages/NotFound";
 import AboutPage from "./pages/AboutPage";
 import AddRental from "./pages/AddRental"
 import EditRental from "./pages/EditRental";
+import Favourites from "./pages/Favourites";
 
 function App() {
   const [rentals, setRentals] = useState(rentalsData.results);
+  const [favRentals, setFavRentals] = useState([]);
 
   function handleDeleteUnit(unitId) {
     const filteredRentals = rentals.filter((rental) => {
@@ -22,6 +24,9 @@ function App() {
       }
     });
     setRentals(filteredRentals);
+  }
+  function handleAddToFavourites(unit) {
+    setFavRentals([...favRentals, unit]);
   }
 
   return (
@@ -37,6 +42,8 @@ function App() {
               <ApartmentList
                 rentals={rentals}
                 handleDeleteUnit={handleDeleteUnit}
+                handleAddToFavourites={handleAddToFavourites}
+                favRentals={favRentals}
               />
             }
           />
@@ -45,7 +52,20 @@ function App() {
             element={<RentalDetail rentals={rentals} />}
           />
           <Route path="/edit-rental/:rentalId" element={<EditRental rentals={rentals} setRentals={setRentals}/>}/>
-          <Route path="/add-rental" element={<AddRental rentals={rentals} setRentals={setRentals}/>} />
+          <Route
+            path="/add-rental"
+            element={<AddRental rentals={rentals} setRentals={setRentals} />}
+          />
+          <Route
+            path="/favourites"
+            element={
+              <Favourites
+                favRentals={favRentals}
+                handleDeleteUnit={handleDeleteUnit}
+                handleAddToFavourites={handleAddToFavourites}
+              />
+            }
+          />
           <Route path="/about" element={<AboutPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
