@@ -5,9 +5,16 @@ import {
   faUsers,
   faStar,
 } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
-const ApartmentCard = ({ rental, onDelete, handleAddToFavourites, favRentals }) => {
+const ApartmentCard = ({
+  rental,
+  onDelete,
+  handleAddToFavourites,
+  favRentals,
+}) => {
+  let location = useLocation();
+
   return (
     <div className="rental-unit">
       <div className="img-box-rental">
@@ -15,7 +22,7 @@ const ApartmentCard = ({ rental, onDelete, handleAddToFavourites, favRentals }) 
           <img src={rental.picture_url.url} alt={`Photo of ${rental.name}`} />
         </Link>
       </div>
-      {favRentals.includes(rental) ? null : (
+      {(location.pathname === "/" || location.pathname === "/favourites") && favRentals.includes(rental) ? null : (
         <>
           <button
             onClick={() => {
