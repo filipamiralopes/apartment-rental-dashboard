@@ -6,6 +6,8 @@ import {
   faStar,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link, useLocation } from "react-router-dom";
+import likeIcon from "../assets/icon.png";
+import pinkLikeIcon from "../assets/pink-icon.png";
 
 const ApartmentCard = ({
   rental,
@@ -22,17 +24,6 @@ const ApartmentCard = ({
           <img src={rental.picture_url.url} alt={`Photo of ${rental.name}`} />
         </Link>
       </div>
-      {(location.pathname === "/" || location.pathname === "/favourites") && favRentals.includes(rental) ? null : (
-        <>
-          <button
-            onClick={() => {
-              handleAddToFavourites(rental);
-            }}
-          >
-            Add to favourites
-          </button>
-        </>
-      )}
       <div className="unit-description">
         <div className="title">
           <Link to={`/rentals/${rental.id}`}>
@@ -77,9 +68,38 @@ const ApartmentCard = ({
             <span></span>
           )}
         </div>
-        <button onClick={() => onDelete(rental.id)} className="delete-btn">
-          Delete
-        </button>
+
+        {location.pathname === "/favourites" ||
+        favRentals.includes(rental) ? null : (
+          <>
+            <button
+              className="btn-like"
+              onClick={() => {
+                handleAddToFavourites(rental);
+              }}
+            >
+              <img src={likeIcon} />
+            </button>
+          </>
+        )}
+        {location.pathname === "/" &
+        favRentals.includes(rental) ? (
+          <>
+            <button
+              className="btn-like"
+              onClick={() => {
+                handleAddToFavourites(rental);
+              }}
+            >
+              <img src={pinkLikeIcon} />
+            </button>
+          </>
+        ): null}
+        {location.pathname === "/favourites" ? null : (
+          <button onClick={() => onDelete(rental.id)} className="delete-btn">
+            Delete
+          </button>
+        )}
       </div>
     </div>
   );

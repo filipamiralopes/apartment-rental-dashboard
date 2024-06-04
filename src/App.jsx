@@ -9,7 +9,7 @@ import { useState } from "react";
 import rentalsData from "./assets/rentals.json";
 import NotFound from "./pages/NotFound";
 import AboutPage from "./pages/AboutPage";
-import AddRental from "./pages/AddRental"
+import AddRental from "./pages/AddRental";
 import EditRental from "./pages/EditRental";
 import Favourites from "./pages/Favourites";
 
@@ -51,7 +51,10 @@ function App() {
             path="/rentals/:rentalId"
             element={<RentalDetail rentals={rentals} />}
           />
-          <Route path="/edit-rental/:rentalId" element={<EditRental rentals={rentals} setRentals={setRentals}/>}/>
+          <Route
+            path="/edit-rental/:rentalId"
+            element={<EditRental rentals={rentals} setRentals={setRentals} />}
+          />
           <Route
             path="/add-rental"
             element={<AddRental rentals={rentals} setRentals={setRentals} />}
