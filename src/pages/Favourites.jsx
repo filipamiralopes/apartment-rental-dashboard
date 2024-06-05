@@ -1,28 +1,30 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import ApartmentCard from "../components/ApartmentCard";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import ApartmentCard from '../components/ApartmentCard';
 
 const Favourites = ({
-  favRentals,
-  handleDeleteUnit,
-  handleAddToFavourites,
+	favRentals,
+	handleDeleteUnit,
+	handleAddToFavourites,
 }) => {
-  return (
-    <div className="favourites-project">
-      <h2>Favourites:</h2>
-      {favRentals.map((unit) => {
-        return (
-            <ApartmentCard
-              key={unit.id}
-              rental={unit}
-              onDelete={handleDeleteUnit}
-              handleAddToFavourites={handleAddToFavourites}
-              favRentals={favRentals}
-            />
-        );
-      })}
-    </div>
-  );
+	return (
+		<div className="favourites-project">
+			<h2>Favourite Apartments:</h2>
+			{favRentals.length === 0 ? (
+				<p className='pFavorites'>No favorites yet...</p>
+			) : (
+				favRentals.map((unit) => (
+					<ApartmentCard
+						key={unit.id}
+						rental={unit}
+						onDelete={handleDeleteUnit}
+						handleAddToFavourites={handleAddToFavourites}
+						favRentals={favRentals}
+					/>
+				))
+			)}
+		</div>
+	);
 };
 
 export default Favourites;

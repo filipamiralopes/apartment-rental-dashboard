@@ -67,7 +67,7 @@
 .footer {
   background-color: #361236;   
   height: 6vh;
-  width:98vw;  
+  width:100%;  
   display: flex;
   align-items: center;
   justify-content: center;
@@ -475,6 +475,15 @@ a {
 }
 
 .favourites-project{
+  min-height: 87vh;
+  width:60%;
+  font-size: 1.2em;
+}
+
+.favourites-project h2{
+  padding-left: 5%;
+}
+
+.pFavorites{
   padding: 5%;
-  height: 70vh;
 }

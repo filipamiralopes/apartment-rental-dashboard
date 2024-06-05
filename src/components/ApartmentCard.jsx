@@ -84,7 +84,7 @@ const ApartmentCard = ({
         )}
         {(location.pathname === "/") & favRentals.includes(rental) ? (
           <>
-            <button>
+            <button className="btn-like">
               <img src={pinkLikeIcon} />
             </button>
           </>
