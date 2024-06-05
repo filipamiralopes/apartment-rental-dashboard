@@ -82,19 +82,13 @@ const ApartmentCard = ({
             </button>
           </>
         )}
-        {location.pathname === "/" &
-        favRentals.includes(rental) ? (
+        {(location.pathname === "/") & favRentals.includes(rental) ? (
           <>
-            <button
-              className="btn-like"
-              onClick={() => {
-                handleAddToFavourites(rental);
-              }}
-            >
+            <button>
               <img src={pinkLikeIcon} />
             </button>
           </>
-        ): null}
+        ) : null}
         {location.pathname === "/favourites" ? null : (
           <button onClick={() => onDelete(rental.id)} className="delete-btn">
             Delete
