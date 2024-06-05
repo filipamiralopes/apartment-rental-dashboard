@@ -305,6 +305,10 @@ a {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+#text-ident{
+  text-indent: 3em;
+}
+
 /* .apartment-list{
   display: flex;
   flex-direction: column;
