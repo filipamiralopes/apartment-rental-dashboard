@@ -25,6 +25,9 @@
 .navbar h2 {
   font-weight: lighter;
 }
+.navbar a{
+  color: #E5BD41;
+}
 
 .landing-page {
   display: flex;
@@ -64,7 +67,7 @@
 .footer {
   background-color: #361236;   
   height: 6vh;
-    
+  width:98vw;  
   display: flex;
   align-items: center;
   justify-content: center;
@@ -78,10 +81,17 @@
   color: #E5BD41; 
 }
 
+.apartment-list{
+  width: 50%;
+  font-size:1.2em;
+}
+
 .rental-unit {
   border: 1px solid grey;
+  width:100%;
   border-radius: 4px;
   margin: 10px;
+  margin-left: 50px;
   font-size: 0.8em;
   display: flex;
   flex-direction: row;
@@ -95,13 +105,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-right: 10px;
+  margin-right: 20px;
+  
 }
 
 .img-box-rental img {
-  width: 250px;
-  height: 200px;
+  width: 300px;
+  height: 250px;
   border-radius: 4px;
+  border:1px solid #361236;
 }
 
 .unit-description {
@@ -296,8 +308,7 @@ a {
 
 .member{
   margin: 40px;
-  width: 400px;
-  
+  width: 400px; 
   
 }
 
