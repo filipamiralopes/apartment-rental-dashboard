@@ -411,6 +411,10 @@ a {
   line-height: 1.5;
 }
 
+.host_response_time_options{
+  font-family: Arial, sans-serif;
+}
+
 .form-container textarea:focus {
   border-color: #E5BD41; 
 }
