@@ -42,6 +42,7 @@
   flex-direction: column;
   width: 15vw;
   background-color: #E5BD41;
+  font-size: 1.1em;
 }
 
 .sidebar a{
@@ -49,6 +50,15 @@
 }
 .sidebar a:hover{
   text-decoration: underline;
+}
+
+.sidebar-links{
+  padding: 10px;
+  border-bottom: 1px solid #361236;
+}
+
+.sidebar-links:hover{
+  background-color: #d4a01f;
 }
 
 .footer {
